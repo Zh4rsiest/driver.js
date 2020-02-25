@@ -8,6 +8,8 @@ $popover-z-index: 1000000000 !default;
 $overlay-z-index: 100002 !default;
 $stage-z-index: 100003 !default;
 $highlighted-element-z-index: 100004 !default;
+$tip-size: 15px;
+$tip-center: calc(50% - #{$tip-size} / 2);
 
 // Note: If you update this duration, make sure to
 // update `ANIMATION_DURATION_MS` constant
@@ -28,28 +30,28 @@ div#driver-popover-item {
   z-index: $popover-z-index;
 
   .driver-popover-tip {
-    border: 5px solid $popover-bg;
+    border: $tip-size solid $popover-bg;
     content: '';
     position: absolute;
 
     &.bottom {
-      bottom: -10px;
+      bottom: -$tip-size*2;
       border-top-color: $popover-bg;
       border-right-color: transparent;
       border-bottom-color: transparent;
       border-left-color: transparent;
 
       &.position-center {
-        left: 49%;
+        left: $tip-center;
       }
 
       &.position-right {
-        right: 20px;
+        right: $tip-size*2;
       }
     }
 
     &.left {
-      left: -10px;
+      left: -$tip-size*2;
       top: 10px;
       border-top-color: transparent;
       border-right-color: $popover-bg;
@@ -57,17 +59,17 @@ div#driver-popover-item {
       border-left-color: transparent;
 
       &.position-center {
-        top: 46%;
+        top: $tip-center;
       }
 
       &.position-bottom {
         top: auto;
-        bottom: 20px;
+        bottom: $tip-size*2;
       }
     }
 
     &.right {
-      right: -10px;
+      right: -$tip-size*2;
       top: 10px;
       border-top-color: transparent;
       border-right-color: transparent;
@@ -75,28 +77,28 @@ div#driver-popover-item {
       border-left-color: $popover-bg;
 
       &.position-center {
-        top: 46%;
+        top: $tip-center;
       }
 
       &.position-bottom {
         top: auto;
-        bottom: 20px;
+        bottom: $tip-size*2;
       }
     }
 
     &.top {
-      top: -10px;
+      top: -$tip-size*2;
       border-top-color: transparent;
       border-right-color: transparent;
       border-bottom-color: $popover-bg;
       border-left-color: transparent;
 
       &.position-center {
-        left: 49%;
+        left: $tip-center;
       }
 
       &.position-right {
-        right: 20px;
+        right: $tip-size*2;
       }
     }
 
